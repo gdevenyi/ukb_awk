@@ -1,7 +1,8 @@
+#!/usr/bin/awk -f
 BEGIN {
     FS="\t"
     OFS="\t"
-    print "eid", "df", "instnum", "itemnum", "value"
+    print "SubjectID", "FieldID", "InstanceID", "ArrayID", "FieldValue"
 }
 
 NR==1 {
@@ -18,7 +19,7 @@ NR>1 {
 	    print $1, h[i], $(i)
 	}
     }
-    if ((NR % 10) == 0){ 
+    if ((NR % 10) == 0){
 	printf "\b\b\b\b\b\b\b%7d", NR > "/dev/stderr"
     }
 }
